@@ -1,0 +1,30 @@
+<h1>Liste des articles</h1>
+
+<button (click)="basculerAffichage()">
+  {{afficherTous ? 'Afficher uniquement les articles publiés' : 'Afficher tous les articles'}}
+</button>
+<ol>
+    <li *ngFor="let article of maListeArticles">
+        
+        <div *ngIf="afficherTous; else lesPublies">
+            <p>{{article.titre}}</p>
+            <p>Description : {{article.description}}</p>
+            <p>Publication : {{article.estPublie? 'Oui' : 'Non'}} </p>
+            <p *ngIf="article.estPublie; else pasPublie">
+              A été retiré? <input type="checkbox" [(ngModel)]="article.estPublie">
+            </p>
+            <ng-template #pasPublie>
+              <p>A été publié? <input type="button" (click)="publie(article.id)"></p>
+            </ng-template>
+        </div>
+
+
+        <ng-template #lesPublies>
+          <div *ngIf="article.estPublie">
+            <p>Publié  : {{article.titre}}</p>
+            <p>Description : {{ article.description }} </p>
+            <p>A été retiré? <input type="checkbox" [(ngModel)]="article.estPublie"></p>
+          </div>
+        </ng-template>
+    </li>
+</ol>

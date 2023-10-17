@@ -1,0 +1,9 @@
+<div>
+    <h2>Composant parent</h2>
+
+
+    <app-child [messageDepuisParent]="message" (messageAEnvoyer)="methodeDefiniePourEnvoi($event)"></app-child>
+
+
+    <p>Message reçu du composant enfant: {{ messageRecu }}</p>
+</div>

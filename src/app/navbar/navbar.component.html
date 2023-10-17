@@ -1,0 +1,44 @@
+<nav>
+    <fieldset>
+        <legend>Connexion</legend>
+        <p *ngIf="isConnected; else notConnected">
+            Bonjour, {{email}} 🤩
+            <button (click)="logout()">🔴Je sors🔴</button>
+        </p>
+        <ng-template #notConnected>
+            <a (click)="getConnexion()">🟢Se connecter🟢</a>
+        </ng-template>
+    </fieldset>
+    
+    <ul>
+        <li><a routerLink="home">Home</a></li>
+
+        <fieldset>
+            <legend>Démonstrations</legend>
+            <li><a routerLink="demo1">Bindings</a></li>
+            <li><a routerLink="demo2">Pipes</a></li>
+            <li><a routerLink="demo3">Directives</a></li>
+            <li><a routerLink="demo4">Input-Output</a></li>
+            <li><a routerLink="demo4v2">Input-Output V2</a></li>
+            <li><a routerLink="demo5">Services</a></li>
+            <li><a routerLink="demo6">Formulaires</a></li>
+            <li><a routerLink="demo7">Routing</a></li>
+            <li><a routerLink="demo8">Guard</a></li>
+            <li><a routerLink="demo9">Storage</a></li>
+            <li><a routerLink="demo10">Observables</a></li>
+            <li><a routerLink="demo11">HttpClient et API</a></li>
+        </fieldset>
+
+        <fieldset>
+            <legend>Exercices</legend>
+            <li><a routerLink="exercice1">Plus ou moins</a></li>
+            <li><a routerLink="exercice2">Chronomètre</a></li>
+            <li><a routerLink="exercice3">Liste article</a></li>
+            <li><a routerLink="exercice4">Bouton Click</a></li>
+            <li><a routerLink="exercice5">Compteur</a></li>
+            <li><a routerLink="exercice6">Formulaire</a></li>
+            <li><a routerLink="exercice7">Services</a></li>
+            <li><a routerLink="exercice8">Les formulaires</a></li>
+        </fieldset>
+    </ul>
+</nav>

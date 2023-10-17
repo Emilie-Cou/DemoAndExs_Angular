@@ -1,0 +1,20 @@
+<p>Ceci est mon composant HOME</p>
+<p>Je m'appelle {{ monNom }}.</p>
+<p>J'ai {{ monAge }} ans.</p>
+<p>Je suis née le {{ maDateNaissance | date : 'dd-MM-yy'}}.</p>
+<!-- Binding(liaison) one-way : Lecture de valeur se trouvant dans le fichier TS -->
+<p>Voici le deuxième prénom de la liste : {{ noms[1]}}</p>
+
+
+<!-- Event Binding (liaison d'evenement) : lier l'execution d'une méthode du fichier .ts à un evenement javascript -->
+<button (click)="changerNom()">Clique ici ChangerNom</button>
+<button (click)="changerNomBis('Emilie')" >Clique ici changerNomBis</button>
+
+
+<!-- Binding Two-Ways : Liaison permettant la lecture et l'écriture d'une variable/prorpiété -->
+<input type="text" [(ngModel)]="monNom">
+
+<br>
+
+<button (click)="start()">Start</button>
+<button (click)="stop()">Stop</button>

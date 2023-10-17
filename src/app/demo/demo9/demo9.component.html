@@ -1,0 +1,18 @@
+<h3>Storage</h3>
+
+<fieldset>
+    <legend>Login</legend>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label for="email">Email: </label>
+        <input type="text" placeholder="email" formControlName="email" id="email">
+
+        <br>
+
+        <label for="password">Mot de passe: </label>
+        <input type="password" placeholder="mot de passe" formControlName="mdp" id="password">
+
+        <br>
+        
+        <button type="submit">Connexion</button>
+    </form>
+</fieldset>

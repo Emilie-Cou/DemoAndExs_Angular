@@ -1,0 +1,9 @@
+<h2>Composant parent</h2>
+<app-childv2 
+            *ngFor="let person of listePersonne"
+            [id]="person.id"
+            [prenom]="person.prenom"
+            (clickOnChildDelete)="deleteChildById($event)"
+            (clickOnChildUpdatePrenom)="updateChildPrenom($event)"
+>
+</app-childv2>

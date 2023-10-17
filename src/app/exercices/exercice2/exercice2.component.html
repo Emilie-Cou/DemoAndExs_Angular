@@ -1,0 +1,16 @@
+<!-- 
+Mettre en place un chronomètre
+- 3 Boutons : Start, Pause, Reset (actif/inactif en fonction des besoins)
+- Affichage “xx minutes xx secondes”
+Astuce : cherchez du côté de setInterval() et du string Interpolation de Typescript ;) 
+-->
+
+<p>Chronomètre</p>
+
+<h1>{{ chrono | convertTime }}</h1>
+
+<button (click)="start()" [disabled]="timer">Start</button>
+<button (click)="stop()" [disabled]="!timer">Stop</button>
+<button (click)="toggle()">Start/Stop</button>
+<button (click)="reset()" [disabled]="timer || chrono == 0">Reset</button>
+

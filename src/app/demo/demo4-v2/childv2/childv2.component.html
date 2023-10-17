@@ -1,0 +1,10 @@
+<div class="chapter">
+    <p>je suis che l'enfant</p>
+    <li>
+        {{ id }} - {{ prenom }} => Opérations disponibles
+        <button (click)="deleteMe(id)">Delete</button>
+        <button (click)="showInput(prenom)">Update prénom</button>
+        <input *ngIf="triggerInputName" type="text" [(ngModel)]="newPrenom">
+        <button *ngIf="triggerInputName" (click)="saveOnParent(id)">Update</button>
+    </li>
+</div>

@@ -1,0 +1,42 @@
+<h1>ProductListComponent</h1>
+
+<div class="chapter">
+
+    <fieldset>
+        <legend>Liste de produits</legend>
+
+        <ul>
+            <li *ngFor="let produit of listeProduits; let i = index">
+                <p>{{produit.nom}} porte l' id {{produit.id}}, il coute {{produit.prix}}€.</p>
+                <p>Description : {{produit.description}}</p>
+                <p>{{produit.enStock? 'Il est en stock.' : 'Il n\'est pas en sctock.'}}</p>
+                <p><button (click)="removeChoiceProduit(i)">Supprimer ce produit</button></p>
+                <p><button (click)="updateChoiceProduit(produit)">Mettre à jour ce produit</button></p>
+            </li>
+        </ul>
+
+        <button (click)="resetListeProduits()">Reset la liste</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ajouter un produit</legend>
+
+        <p>Nom : <input type="text" [(ngModel)]="newProduitNom"></p>
+        <p>Description : <input type="text" [(ngModel)]="newProduitDescription"></p>
+        <p>Prix : <input type="number" [(ngModel)]="newProduitPrix"></p>
+        <p>Stock : <input type="checkbox" [(ngModel)]="newProduitStock"></p>
+
+        <button (click)="addNewProduit()">Ajouter</button>
+    </fieldset>
+
+    <fieldset *ngIf="montreForm">
+        <legend>Mettre à jour un produit</legend>
+
+        <p>Nom : <input type="text" [(ngModel)]="updatedProduitNom"></p>
+        <p>Description : <input type="text" [(ngModel)]="updatedProduitDescription"></p>
+        <p>Prix : <input type="number" [(ngModel)]="updatedProduitPrix"></p>
+        <p>Stock : <input type="checkbox" [(ngModel)]="updatedProduitStock"></p>
+
+        <button (click)="updateSelectProduit()" >Mettre à jour</button>
+    </fieldset>
+</div>

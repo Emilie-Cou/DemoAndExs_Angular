@@ -1,0 +1,17 @@
+<!--
+    afficher une valeur numérique
+    
+    créer 2 bouton :
+    1 bouton + (incrémenté la valeur affichée)
+    1 bouton - (décrementé)
+    
+    Bonus :
+    Trouver une manière de désactiver le bouton - si la valeur passe sous 0
+    Trouver une manière de désactiver le bouton + si la valeur passe au dessus de 10
+    La solution se trouve entre les slide 31 et 38
+ -->
+
+ <p>Exercice +  ou  -</p>
+ <h1>{{myNumber}}</h1>
+ <input type="button" value="-" (click)="withDrawOne()" [disabled]="myNumber <= 0">
+ <input type="button" value="+" (click)="addOne()" [disabled]="myNumber >= 10">

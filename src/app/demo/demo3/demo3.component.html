@@ -1,0 +1,18 @@
+<h1>Liste des tâches</h1>
+<ul>
+  <!-- ngfor -->
+  <li *ngFor="let tache of taches">
+
+    <!-- ngif -->
+    <div *ngIf="tache.complet; else elseblock">
+      <span [ngClass]="{'complet' : tache.complet}">{{tache.nom}}</span>
+      <span> OK ! <input type="checkbox" [(ngModel)]="tache.complet"></span>
+    </div>
+
+    <ng-template #elseblock>
+      <p [ngClass]="{'non-complet' : !tache.complet}">La tâche n'est pas complete !</p>
+      <span> N-OK ! <input type="button" (click)="changerEtat(tache.id)"></span>
+    </ng-template>
+
+  </li>
+</ul>

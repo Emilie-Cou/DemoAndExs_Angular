@@ -1,0 +1,20 @@
+<h2>Les services</h2>
+
+<div class="chapter">
+    <h3>Liste de livres</h3>
+
+    <ul>
+       <li *ngFor="let livre of livres; let i = index">
+        {{ livre }}
+        <button (click)="removeChoiceLivre(i)">Supprimer</button>
+       </li> 
+    </ul>
+
+    <hr>
+
+    <h3>Ajouter un livre</h3>
+    <input type="text" [(ngModel)]="newLivre" placeholder="Nouveau livre">
+    <button (click)="addNewLivre()">Ajouter à la liste</button>
+    <p>{{ erreur ? erreurMessage : null}}</p>
+
+</div>

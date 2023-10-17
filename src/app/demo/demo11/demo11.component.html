@@ -1,0 +1,12 @@
+<h3>Http Client et Api</h3>
+
+<div class="chapter" *ngIf="found; else notPokemon">
+    <p>Nom : {{currentPokemon.name}} </p>
+    <p>Taille : {{currentPokemon.height}} </p>
+    <p>Poids : {{currentPokemon.weight}} </p>
+    <p>Expérience de base : {{currentPokemon.base_experience}}</p>
+    <p>Par défaut : {{currentPokemon.is_default}} </p>
+</div>
+<ng-template #notPokemon class="error-form">
+    <h2>Aucune correspondance...</h2>
+</ng-template>
